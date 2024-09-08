@@ -1,4 +1,3 @@
-"use server"
 import { db } from "@/db"
 import { notFound } from "next/navigation"
 import DesignPreview from "./DesignPreview"
