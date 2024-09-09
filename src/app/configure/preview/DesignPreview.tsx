@@ -20,7 +20,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const router = useRouter();
   const {toast} = useToast();
   const {id} = configuration
-  const {user} = useKindeBrowserClient();
+  const {getUser} = useKindeBrowserClient();
   const [isLoginModelOpen , setIsLoginModelOpen] = useState<boolean>(false)
   const [showConfetti, setShowConfetti] = useState(false);
   useEffect(() => setShowConfetti(true));
@@ -56,7 +56,8 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
       })
     }
   });
-
+  const user = getUser();
+  
   const handleCheckOut = () => {
     if(user){
       //create payment session 
